@@ -171,6 +171,7 @@ h1 {
 }
 @media (max-width: 620px) {
   .call-header { display: none; }
+  .mobile-menu { margin-left: auto; }
   .hero-photo { min-height: 280px; }
   h1 { font-size: 43px; }
   .lead { font-size: 16px; }

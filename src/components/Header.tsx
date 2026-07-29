@@ -1,6 +1,10 @@
+"use client";
 import Link from 'next/link';
+import { useState } from 'react';
 
 export default function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <header className="site-header">
       <div className="header-inner">
@@ -16,8 +20,27 @@ export default function Header() {
         </nav>
         <div className="language"><span>EN</span> <span>/ ES</span></div>
         <a className="call-header" href="tel:8008410519">Call 800-841-0519</a>
-        <button className="mobile-menu" aria-label="Open menu"><span></span><span></span><span></span></button>
+        <button 
+          className="mobile-menu" 
+          aria-label="Open menu"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          <span className={isOpen ? "rotate-45 translate-y-[8px] transition-transform" : "transition-transform"}></span>
+          <span className={isOpen ? "opacity-0 transition-opacity" : "transition-opacity"}></span>
+          <span className={isOpen ? "-rotate-45 -translate-y-[8px] transition-transform" : "transition-transform"}></span>
+        </button>
       </div>
+
+      {isOpen && (
+        <div className="absolute top-full left-0 w-full bg-white shadow-xl border-t border-gray-200 flex flex-col p-4 z-50">
+          <Link href="/medicare" className="p-4 text-lg font-semibold text-[#0a234f] border-b border-gray-100" onClick={() => setIsOpen(false)}>Medicare</Link>
+          <Link href="/medicaid" className="p-4 text-lg font-semibold text-[#0a234f] border-b border-gray-100" onClick={() => setIsOpen(false)}>Medicaid</Link>
+          <Link href="/life-insurance" className="p-4 text-lg font-semibold text-[#0a234f] border-b border-gray-100" onClick={() => setIsOpen(false)}>Life Insurance</Link>
+          <Link href="/resources" className="p-4 text-lg font-semibold text-[#0a234f] border-b border-gray-100" onClick={() => setIsOpen(false)}>Resources</Link>
+          <Link href="/about" className="p-4 text-lg font-semibold text-[#0a234f]" onClick={() => setIsOpen(false)}>About Us</Link>
+          <a href="tel:8008410519" className="mt-4 p-4 text-center bg-[#123f9b] text-white rounded-lg font-bold shadow-md" onClick={() => setIsOpen(false)}>Call 800-841-0519</a>
+        </div>
+      )}
     </header>
   );
 }
