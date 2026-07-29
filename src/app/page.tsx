@@ -1,23 +1,6 @@
 export default function Home() {
   return (
     <>
-      <header className="site-header">
-        <div className="header-inner">
-          <a className="brand" href="#" aria-label="Marymax Insurance Services home">
-            <img src="/assets/logomarymax.webp" alt="Marymax Insurance Services" />
-          </a>
-          <nav className="desktop-nav" aria-label="Primary navigation">
-            <a className="nav-item" href="#services">Medicare <span className="chevron" aria-hidden="true"></span></a>
-            <a className="nav-item" href="#services">Medicaid <span className="chevron" aria-hidden="true"></span></a>
-            <a className="nav-item" href="#services">Life Insurance <span className="chevron" aria-hidden="true"></span></a>
-            <a className="nav-item" href="#resources">Resources <span className="chevron" aria-hidden="true"></span></a>
-            <a className="nav-item" href="#about">About Us</a>
-          </nav>
-          <div className="language"><span>EN</span> <span>/ ES</span></div>
-          <a className="call-header" href="tel:8008410519">Call 800-841-0519</a>
-          <button className="mobile-menu" aria-label="Open menu"><span></span><span></span><span></span></button>
-        </div>
-      </header>
       <main>
         <section className="hero">
           <div className="hero-copy">
